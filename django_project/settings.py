@@ -24,13 +24,13 @@ SECRET_KEY = "django-insecure-0peo@#x9jur3!h$ryje!$879xww8y1y66jx!%*#ymhg&jkozs2
 DEBUG = True
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = [
-    "https://rcd-studio-stage.us.aldryn.io",
+ALLOWED_HOSTS = ["*"]
+
+csrf_trusted_origins = [
+    "https://*.aldryn.io",
     "https://*.redcyberdragon.net",
     "http://localhost:8000",
     "https://*.ondigitalocean.app",
-    "0.0.0.0",
-    "127.0.0.1",
 ]
 
 

@@ -25,7 +25,7 @@ DEBUG = True
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = [
-    "https://*.aldryn.io",
+    "https://*.us.aldryn.io",
     "https://*.redcyberdragon.net",
     "http://localhost:8000",
     "https://*.ondigitalocean.app",

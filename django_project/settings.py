@@ -28,11 +28,11 @@ DEBUG = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["*"]
 
-csrf_trusted_origins = [
-    "https://*.us.aldryn.io",
-    "https://*.redcyberdragon.net",
-    "http://localhost:8000",
-    "https://*.ondigitalocean.app",
+CSRF_TRUSTED_ORIGINS = [
+    "*.aldryn.io",
+    "*.redcyberdragon.net",
+    "localhost:8000",
+    "*.ondigitalocean.app",
 ]
 
 

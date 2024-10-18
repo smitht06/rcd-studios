@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 csrf_trusted_origins = [
-    "https://*.aldryn.io",
+    "https://*.us.aldryn.io",
     "https://*.redcyberdragon.net",
     "http://localhost:8000",
     "https://*.ondigitalocean.app",

@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 import dj_database_url
 
+
 # config/settings.py
 # django-debug-toolbar
 import socket
@@ -28,11 +29,11 @@ DEBUG = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = [
-    "*.aldryn.io",
-    "*.redcyberdragon.net",
-    "localhost:8000",
-    "*.ondigitalocean.app",
+csrf_trusted_origins = [
+    "https://*.aldryn.io",
+    "https://*.redcyberdragon.net",
+    "http://localhost:8000",
+    "https://*.ondigitalocean.app",
 ]
 
 
@@ -219,3 +220,11 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+
+
+DJANGO_SECURE_SSL_REDIRECT=False
+DJANGO_SECURE_HSTS_SECONDS=50000
+DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+DJANGO_SECURE_HSTS_PRELOAD=True
+DJANGO_SESSION_COOKIE_SECURE=True
+DJANGO_CSRF_COOKIE_SECURE=True

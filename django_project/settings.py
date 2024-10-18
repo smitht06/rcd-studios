@@ -1,4 +1,6 @@
 from pathlib import Path
+import os
+import dj_database_url
 
 # config/settings.py
 # django-debug-toolbar
@@ -101,17 +103,19 @@ TEMPLATES = [
 #     }
 # }
 
-# For Docker/PostgreSQL usage uncomment this and comment the DATABASES config above
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "db",  # set in docker-compose.yml
-        "PORT": 5432,  # default postgres port
+if "DATABASE_URL" in os.environ:
+    DATABASES = {"default": dj_database_url.config(conn_max_age=500)}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "postgres",
+            "USER": "postgres",
+            "PASSWORD": "postgres",
+            "HOST": "db",  # set in docker-compose.yml
+            "PORT": 5432,  # default postgres port
+        }
     }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
